@@ -484,8 +484,8 @@ GM_xmlhttpRequest({
             url: document.location.origin,
             onload: res => {
                 let html = res.responseText;
-                html = html.replace(/ src="js\/game\.js">/, `>${Utilities.toString()}\nwindow.utilities = new Utilities();\n${code.toString()}`)
-                    .replace(/ src="libs\/zip-ext\.js">/, '>')
+                html = html.replace(/ src="js\/game\.js\?build=\w+">/, `>${Utilities.toString()}\nwindow.utilities = new Utilities();\n${code.toString()}`)
+                    .replace(/ src="libs\/zip-ext\.js\?build=\w+">/, '>')
                 document.open();
                 document.write(html);
                 document.close();
